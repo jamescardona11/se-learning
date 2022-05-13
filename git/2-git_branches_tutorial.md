@@ -1,7 +1,6 @@
 # GIT Branches
 
-Esté tutorial hace parte del siguiente [video](https://www.youtube.com/watch?v=e2IbNHi4uCI).
-El tutorial es muy fácil de seguir solo debes tener Git instalado y tener una cuenta de Github para la última parte del tutorial.
+Esté notas fueron tomadas del siguiente [video](https://www.youtube.com/watch?v=e2IbNHi4uCI).
 
 Vamos a intentar traer algunos conceptos útiles para el manejo de ramas.
 Lo primero es el HEAD branch, esta es tu rama principal.
