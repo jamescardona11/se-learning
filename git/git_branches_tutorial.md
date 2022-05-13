@@ -25,3 +25,42 @@ Otra distinción importante es local and remote branches.
 -> Descargar una rama en un repositorio que no tengo tracking en local
 `git branch --track <local-name> origin/<remote-name>`
 `git checkout --track origin/<remote-name>`
+
+delete branch
+-d -D
+
+Merge vs Rebase
+
+MERGE:
+
+```mermaid
+flowchart LR
+
+A((c1)) --> B((c3))
+B --> C((c4))
+A --> D((c2))
+D --> E[feature/uploader]
+C --> F[C5]
+F --> |C5=Merge commit|G(main/HEAD)
+D --> F(C5)
+
+```
+
+REBASE:
+
+```mermaid
+flowchart LR
+
+A((c1)) --> B((c3))
+B((c3)) --> C[main/HEAD]
+A((c1)) --> D((c2))
+D((c2)) --> E((c4))
+E --> F[feature/uploader]
+
+
+O((c1)) --> P((c2))
+P((c2)) --> L((c4))
+L((c4)) --> |C4= feature/uploader|Q((c3))
+Q((c3)) --> M[main/head]
+
+```
