@@ -14,13 +14,13 @@ Es una herramienta para optimizar y hacer una limpieza de tu historial de commit
 
 ### Paso a paso
 
-1. ¿Qúe tan lejos quieres ir? ¿Cuál sera tu commit "base" ?
+1. ¿Qúe tan lejos quieres ir? ¿Cuál seré tu commit "base" ?
 2. `git rebase -u HEAD~3`
-3. En el editor, solo determine que acciones(actions) vas hacer, no cambies el commit en este step
+3. En el editor, solo determiné que acciones(actions) vas a hacer, no cambies el commit en este step
    Ex: **reword** cambiar el mensaje de un commit
    **squad** combinar dos commits en uno solo (donde se marque con squad - se combina con el superior a ese en la lista)
 
-PD: El orden de los commits esta al reves en la lista de acciones
+PD: El orden de los commits está al reves en la lista de acciones
 
 ### Cherry pick
 
@@ -34,7 +34,7 @@ Pero que pasa si no quiero tomar todo el historial de la rama b y solo quiero un
 
 #### Alerta
 
-- Cherry pick es para situaciones muy especificas, recuerda que esto reescribe el historial de Git, no se debe usar como reemplazo del merge.
+- Cherry pick es para situaciones muy específicas, recuerda que esto reescribe el historial de Git, no se debe usar como reemplazo del merge.
 
 Ex: cuando es una buena idea usar cherry-pick
 

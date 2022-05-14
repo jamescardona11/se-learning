@@ -4,7 +4,7 @@ este [video](https://www.youtube.com/watch?v=M_3VeKPFi5U&list=PLZVwXPbHD1KM5oLAm
 
 # 1 Git Flow
 
-Simplemente se van creando feature desde una rama long-term y se van integrando a develop o master
+Simplemente, se van creando feature desde una rama long-term y se van integrando a develop o master
 Entonces se van creando features y features
 
 Master, develop, release
@@ -21,7 +21,7 @@ El estado de algunos hotfix a veces no es consistente porque no se integran.
 Es muy simple.
 Solo se tienen dos ramas master y features
 Lo que deployean es las ramas features.
-Se integra a master es despues de que se paso pruebas
+Se integra a master es después de que se pasó pruebas
 
 Desarrollo: Features branches
 Pre-prod: features
@@ -41,7 +41,7 @@ Desarrollo: topic branches
 Pre-prod: features
 Prod: Features o master
 
-Si hay fallos se hace un rama hot fix y cherry-pick para integrrar
+Si hay fallos se hace una rama hot fix y cherry-pick para integrrar
 
 # 4 Gitlab flow
 
@@ -76,8 +76,8 @@ Debe ser código de calidad y con buenos test
   Las build son 'inmutables'
 - Release flow: No gusta, porque se espera mucho para hacer deploy.
 - Git flow: No, permite con poca inversión de tiempo se aprenda.
-  Pero see empieza a complicar la integración de ramas
-  Si tenemos test y aumentamos la confianza pra que se requiere pre-prod
-- Trunk-based develoment: Si, se puede integrar rapido con master y se va deployment
-- Github flow: Si, se pueden los entornos dinamicos por features. Se debe tener mucho CI/CD
+  Pero se empieza a complicar la integración de ramas
+  Si tenemos test y aumentamos la confianza para que se requiere pre-prod
+- Trunk-based develoment: Si, se puede integrar rápido con master y se va deployment
+- Github flow: Si, se pueden los entornos dinámicos por features. Se debe tener mucho CI/CD
 - Master-only-flow: Si, simplificar para poder entregar más valor.

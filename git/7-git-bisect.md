@@ -3,7 +3,7 @@
 De este [video](https://www.youtube.com/watch?v=D7JJnLFOn4A)
 
 Intentar encontrar un commit que ha dañado nuestra aplicación.
-Cómo se usa
+¿Cómo se usa?
 -> `git bisect start`
 -> `git bisect bad` (current)
 -> `git bisect good <hash>`

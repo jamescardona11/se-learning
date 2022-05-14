@@ -25,8 +25,10 @@ para hacer esto en consola debemos hacer lo siguiente
 -> `git merge --squash <branch-name>`
 
 -> `git rebase -i HEAD~#`
--> marcar todas las acciones como _squash_ menos la primer en la lista de acciones
+-> marcar todas las acciones como _squash_ menos el primer en la lista de acciones
 
 ---
 
-Cuando estemos trabajando y se han introducido cambios a la rama principal una buena estrategia es hacer un rebase para no hace mucho merge commit
+Cuando estemos trabajando y se han introducido cambios a la rama principal, una buena estrategia es hacer un rebase para no hace mucho merge commit
+
+https://www.git-tower.com/learn/git/faq/git-squash

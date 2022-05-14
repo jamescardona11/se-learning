@@ -2,7 +2,7 @@
 
 De este [video](youtube.com/watch?v=lX9hsdsAeTk)
 
-Los errores pueden pasar, el desarrollo de software es un proceso creativo y que involucra personas, las personas cometemos errors.
+Los errores pueden pasar, el desarrollo de software es un proceso creativo y que involucra personas, las personas cometemos errores.
 Para eso es git, es nuestro helper, nuestra muralla para combatir errores.
 
 Vamos a ver 17 casos donde git nos va ayudar a deshacer/prevenir errores.
@@ -16,7 +16,7 @@ Vamos a ver 17 casos donde git nos va ayudar a deshacer/prevenir errores.
 
 -> `git restore <file-name>`
 
-### 3 Descartar algunas lineas de un archivo (uncommitted)
+### 3 Descartar algunas líneas de un archivo (uncommitted)
 
 -> `git restore -p <file-name>`
 
@@ -42,7 +42,7 @@ Cuando se hace esto git va a crear un nuevo commit con el estado del revert
 ### 7 Resetear a una versión anterior
 
 -> `git reset --hard <#hash>`
-Cuidado que el --hard va eliminar los commits despues del hash destino
+Cuidado que el --hard va a eliminar los commits después del hash destino
 
 -> `git reset --mixed <#hash>`
 Mantienen los cambios descartados como cambios locales, para que puedas trabajar con ellos, modificarlos, etc.
@@ -75,14 +75,14 @@ Mantienen los cambios descartados como cambios locales, para que puedas trabajar
 
 ### 13-15 Rebase interactivo
 
-1. ¿Qúe tan lejos quieres ir? ¿Cuál sera tu commit "base" ? (El commit padre)
+1. ¿Qúe tan lejos quieres ir? ¿Cuál será tu commit "base" ? (El commit padre)
 2. `git rebase -i HEAD~#` o `git rebase -i <hash>`
-3. En el editor, solo determine que acciones(actions) vas hacer, no cambies el commit en este step
+3. En el editor, solo determiné que acciones(actions) vas a hacer, no cambies el commit en este step
    13: **reword** cambiar el mensaje de un commit
    14: **drop** eliminar un commit
    15: **squad** combinar dos commits en uno solo (donde se marque con squad - se combina con el superior a ese en la lista)
 
-PD: El orden de los commits esta al reves en la lista de acciones
+PD: El orden de los commits está al reves en la lista de acciones
 
 ### 16 Agregar cambios a un commit viejo
 

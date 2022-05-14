@@ -1,30 +1,30 @@
 # GIT para principiantes
 
 Esté tutorial hace parte del siguiente [blog-post]().
-El tutorial es muy fácil de seguir solo debes tener Git instalado y tener una cuenta de Github para la última parte del tutorial.
+El tutorial es muy fácil de seguir, solo debes tener Git instalado y tener una cuenta de Github para la última parte del tutorial.
 
-Sigue los pasos para que creemos nuestro primer repositorio, lo modifiquemos y lo subamos a la nuve
+Sigue los pasos para que creemos nuestro primer repositorio, lo modifiquemos y lo subamos github
 
 ### Lo básico:
 
-1. Crea una carpeta y abrir esta carpeta en tu editor de código favorito.
+1. Crea una carpeta y abrir está carpeta en tu editor de código favorito.
 2. Si ya tienes configurado git puedes salarte este punto.
    - `git config --global user.name "name"`
    - `git config --global user.email email`
 3. Empecemos inicializando
    - `git init`
 4. Vas a crear dos archivos **file1.txt**, **file2.txt**
-5. Veamos como esta nuestro workspace
+5. Veamos como está nuestro workspace
    - `git status`
-   * Deberia aparecer que tenemos dos archivos en color rojo en nuestra consola.
+   * Debería aparecer que tenemos dos archivos en color rojo en nuestra consola.
 6. Agreguemos los archivos a la etapa de stage
    - `git add .`
-7. Veamos como esta nuestro workspace nuevamente
+7. Veamos como está nuestro workspace nuevamente
    - `git status`
-   * Deberia aparecer que tenemos dos archivos en color verde en nuestra consola.
+   * Debería aparecer que tenemos dos archivos en color verde en nuestra consola.
 8. Hagamos nuestro primer commit
    - `git commit -m`
-   * Despues del _-m_ coloca el mensaje para guardar tu primer commit
+   * Después del _-m_ coloca el mensaje para guardar tu primer commit
 9. Modifiquemos el **file1.txt**
    - Agreguemos algunos textos acá
 10. Vuelve a agregar el archivo a la etapa de stage y haz un commit.
@@ -38,7 +38,7 @@ Sigue los pasos para que creemos nuestro primer repositorio, lo modifiquemos y l
 3. Veamos las diferencias de lo que hemos modificado
    - `git diff file1.txt`
 4. Hagamos commit
-5. Cambiemonos a la rama principal
+5. Cambiémonos a la rama principal
    - `git checkout master`
 6. Hagamos un merge
    - `git merge b1`
@@ -54,5 +54,5 @@ Sigue los pasos para que creemos nuestro primer repositorio, lo modifiquemos y l
 3. Subamos la rama a github
    - `git push -u origin master`
 
-Felicitaciones!
+¡Felicitaciones!
 Creaste tu primer proyecto y usaste diferentes estrategias para modificar, crear ramas, subir a github.
