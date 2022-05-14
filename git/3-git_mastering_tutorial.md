@@ -123,6 +123,7 @@ PD: el commit C3 en la siguiente imagen tiene un \*, porque tecnicamente es un n
 
 - No usar rebase en commits que ya se han pusheado a repositorios publicos
 - Usar para limpiar mi historial local después de mezclar en (into) a una rama compartida
+- Gold RULE: No cambiar el historial de git sobre un commit que ya esta en remoto
 
 ![](/git/rebase-step-3.png)
 

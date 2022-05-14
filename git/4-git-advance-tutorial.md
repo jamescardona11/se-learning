@@ -18,7 +18,9 @@ Es una herramienta para optimizar y hacer una limpieza de tu historial de commit
 2. `git rebase -u HEAD~3`
 3. En el editor, solo determine que acciones(actions) vas hacer, no cambies el commit en este step
    Ex: **reword** cambiar el mensaje de un commit
-   **squad** combinar dos commits en uno solo (donde se marque con squad - se combina con el superior a ese)
+   **squad** combinar dos commits en uno solo (donde se marque con squad - se combina con el superior a ese en la lista)
+
+PD: El orden de los commits esta al reves en la lista de acciones
 
 ### Cherry pick
 
@@ -42,7 +44,7 @@ Ex: cuando es una buena idea usar cherry-pick
 Steps:
 
 - Nos pasamos para la rama correcta
-- Hacemos cherry-pick del commit con el hash
+- Hacemos cherry-pick del commit con el hash `git cherry-pick <hash>`
 - Luego podemos hacer un reset `git reset --hard HEAD~1`
 
 ## Reflog
