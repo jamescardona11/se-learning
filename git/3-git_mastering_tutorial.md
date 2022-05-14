@@ -1,5 +1,7 @@
 # GIT Mastering
 
+Esté notas fueron tomadas del siguiente [video](https://www.youtube.com/watch?v=Uszj_k0DGsg).
+
 ### EL commit perfecto:
 
 - Agregando lo necesario para esto.
