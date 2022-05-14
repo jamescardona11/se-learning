@@ -1,5 +1,7 @@
 # Git Merge vs Rebase vs Squash
 
+De este [video](youtube.com/watch?v=HlmZLXMOpEM)
+
 # merge
 
 Varios padres

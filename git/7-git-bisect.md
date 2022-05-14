@@ -1,4 +1,6 @@
-# Git Bisec
+# Git Bisect
+
+De este [video](https://www.youtube.com/watch?v=D7JJnLFOn4A)
 
 Intentar encontrar un commit que ha dañado nuestra aplicación.
 Cómo se usa

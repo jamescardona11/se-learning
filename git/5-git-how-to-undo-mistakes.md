@@ -1,5 +1,7 @@
 # ¿ Cómo deshacer errores ?
 
+De este [video](youtube.com/watch?v=lX9hsdsAeTk)
+
 Los errores pueden pasar, el desarrollo de software es un proceso creativo y que involucra personas, las personas cometemos errors.
 Para eso es git, es nuestro helper, nuestra muralla para combatir errores.
 
