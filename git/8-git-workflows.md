@@ -1,6 +1,6 @@
 # Tipos de Flow
 
-este [video](https://www.youtube.com/watch?v=M_3VeKPFi5U&list=PLZVwXPbHD1KM5oLAmhz-HHRIMhaOEXku5)
+Todo lo tome de un alista de reproducción que inicia con este [video](https://www.youtube.com/watch?v=M_3VeKPFi5U&list=PLZVwXPbHD1KM5oLAmhz-HHRIMhaOEXku5)
 Complemente con este [video](https://www.youtube.com/watch?v=U_IFGpJDbeU)
 Complemente con estos posts: [Post-1]()
 
@@ -30,7 +30,7 @@ Development branch
 
 ---
 
-Complemente con estos posts: [Post-1](https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow#:~:text=Gitflow%20es%20un%20modelo%20alternativo,vez%20y%20quien%20lo%20populariz%C3%B3.)
+Complemente con estos posts: [Post-1](https://www.atlassian.com/es/git/tutorials/comparing-workflows)
 
 ### ¿Qué es?
 
@@ -85,6 +85,8 @@ Contras:
 
 # 2 Github Flow / Feature branching
 
+Complemente con estos posts: [Post-1]()
+
 Es muy simple.
 Solo se tienen dos ramas master y features
 Lo que deployean es las ramas features.
@@ -97,13 +99,15 @@ Prod: Features o master
 Se entregan más funcionalidades más rapidas.
 Master es deployable siempre
 
----
-
 - Una rama per feature
 - Las features son deployables
 - CD
 - Short delivery
 - Pull request para unir cógio y dar feeback
+
+---
+
+![](https://www.flagship.io/wp-content/uploads/github-flow-branching-model.jpeg)
 
 # 3 Git release Flow: Microsoft Git
 
@@ -131,6 +135,8 @@ Se usan cherry-picks para hotfix
 - Cada enviroment esta encima de otro
 - todos los cambios se pasan por todos los enviroments
 
+![](https://www.flagship.io/wp-content/uploads/gitlab_flow_environment_branches.png)
+
 # 5 Trunk-Based-Development
 
 Master
@@ -153,16 +159,16 @@ Una sola rama donde se sacan features de esta y se van integrando para generar r
 
 ---
 
-Complemente con estos posts: [Post-1](https://dev.to/marianocodes/por-que-trunk-based-development-i5n) [Post-2](https://dev.to/marianocodes/que-son-los-feature-flags-kc7)
+Complemente con estos posts: [Post-1](https://dev.to/marianocodes/por-que-trunk-based-development-i5n) [Post-2](https://dev.to/marianocodes/que-son-los-feature-flags-kc7) [Post-3](https://medium.com/@TEvolvers.dev/trunk-based-development-una-sola-rama-un-solo-objetivo-6f8beb6cb231) [Post-4](https://devcycle.com/blog/transitioning-to-trunk-based-development)
 
 ### ¿Qué es?
 
-Es una estrategia donde se usa una rama principal main, en esta rama todo el equipo se integra haciendo push a esta rama. La rama trunk es promovida donde se requiera, como por ejemplo a ambientes de pre-productivos, local, etc. Su veracidad y respaldo la dan los tags o etiquetas.
+Es una estrategia donde se usa una rama principal main, en esta rama todo el equipo se integra haciendo push a esta rama. La rama trunk es promovida donde se requiera, como por ejemplo a ambientes de pre-productivos, local, etc. Su veracidad y respaldo la dan los tags o etiquetas. Se dice que las ramas de features solo deben durar un día.
 
 ¿Qué se requiere que un equipo trabaje con TBD?, madurez sin esto esta estrategia se verá impactada por múltiples conflictos que a su vez se evidencia en fallos de la aplicación.
 Madurez personal como técnica.
 
-![](https://uploads.toptal.io/blog/image/129305/toptal-blog-image-1551794424851-b3d5928bc33edfc954ef460062e5cbcc.png)
+![](https://uploads.toptal.io/blog/image/129304/toptal-blog-image-1551794413174-f4139c4be533dc592d49f9a0bcc330f0.png)
 
 - No existen ramas de larga duración. No se le da mantenimiento a ningun branch.
 - Se deben hacer commits al menos una vez al día (no es que vamos a subir cualquier cosa)
@@ -193,7 +199,21 @@ En TBD se usa el trunk para todos los ambientes, está debe conllevar un tag o e
 2- La automatización es clave para el exito de esta metodología, unittesting, CI.
 3- Si bien sabemos que se espera que agreguemos funcionalidades completas, esto no implica que una lógica este lista para ser presentada al usuario final. Podemos usar features flags.
 
-### Conclusión
+### ¿Qué son los feature flags?
+
+Se usan cuando vamos a desarrollar algo y luego de integrarlo la tarea aun esta incompleta o tiene alguna dependencia no integrada aun.
+
+#####  ¿Qué son?
+
+Son valores boleanos que dicen si muestan o no el código.
+
+##### ¿Cómo los puedo definir?
+
+- Utilizar un servicio de features flags, ejemplo Bullet Train o Launch Darkly.
+- Utilizar un lenguaje de back-end y crear un servicio, en el que el app pueda consumir y obtener los valores de los flags.
+- Utilizar archivos locales dentro el app.
+
+##### ¿Cómo los puedo definir?
 
 # 6 Master-only flow / Single branch
 

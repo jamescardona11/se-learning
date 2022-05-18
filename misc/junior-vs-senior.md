@@ -67,3 +67,5 @@
   - “Cualquier tonto puede escribir código que entiendan las máquinas, pero solo un buen programador escribe código que entienden otras personas”
 
 ![](https://edteam-media.s3.amazonaws.com/blogs/original/dd21ba0d-7180-4c0f-bcbd-ba0011abcff5.png)
+
+→ [video](https://www.youtube.com/watch?v=zWXnZPQtYWI)
