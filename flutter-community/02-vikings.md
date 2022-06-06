@@ -30,7 +30,7 @@ REF [example](https://github.com/Bwolfs2/movie_app)
 build_runner: Code generator
 Podemos especificar que files queremos que sean generados
 
-![](./images/03-vikings-1.png)
+![](./images/02-vikings-1.png)
 
 --- OPEN API
 
