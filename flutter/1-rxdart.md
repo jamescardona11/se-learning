@@ -1,12 +1,17 @@
-# RXDart
+# Reactive DART
 
-[REF](youtube.com/watch?v=xBFWMYmm9ro)
+[REF](https://www.youtube.com/watch?v=xBFWMYmm9ro)
 
-#### StreamController
+SINK is only write
+STREAM: is only read
+BehaviorSubject: its both because internal use StreamController
 
-: is special stream can read and write
+- Distinct: solo cuando sean valores diferentes
+- debounceTime: espera un momento para transmitir mensajes
+- switchMap: Convierte items into stream
+- Rx.fromCallable: Convierte un future into Stream
+- delay: add a delay
+- map: mapea los elementos
+- startWith: colocar un evento al inicio de una stream
 
-Operators:
-
-- distinct: limit to the different values
-- debounceTime: limit the time elements are sent to the stream
+2:23
