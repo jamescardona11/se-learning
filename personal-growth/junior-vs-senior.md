@@ -5,7 +5,7 @@
 - El seniority hace referencia a que tienes conocimiento técnico y habilidades blandas
 - Muchas empresas catalogan el seniority como años de experiencia, pero es **obsoleto**
 - Los seniorities son **subjetivos**
-- C**aracterísticas:**
+- **Características:**
   - No necesita supervisión - Es autónomo
   - Conocimiento de una o dos ramas de la empresa
   - Detectar posibles problemas

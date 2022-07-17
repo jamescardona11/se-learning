@@ -5,7 +5,7 @@
 - Johary window
 
 
-[](../_assets/johari.png)
+![](./assets/johari.png)
 
 Crecer:
 - Ser experto (individual contributor)
