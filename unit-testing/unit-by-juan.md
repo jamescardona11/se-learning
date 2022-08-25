@@ -102,3 +102,8 @@ Esto permite que se pueda cambiar a voluntad.(Tener el poder)
 - Dominio (Debe tener cobertura cercana al 100%)
   
   
+
+
+  cambio de estado
+  llamado a funciones
+  valor retorno
