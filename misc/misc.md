@@ -34,3 +34,21 @@
 - No mejorar habilidades
 - No tener mentor
 - No hacer planes
+
+
+# All or nothing
+
+Viaje o destino: Compañia
+
+Estado emocional en el piso como lo levanto
+
+Cerebro + corazón
+
+Pasión
+
+Como si el día de maãnan no tuvieramos nada
+
+Ver un conejo o pato imagen, que todos vean lo mismo 
+
+su nivel de deseo, pasion, commited
+La gente buena le pasa cosas buienas
