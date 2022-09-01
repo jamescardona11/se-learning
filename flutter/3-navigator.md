@@ -56,3 +56,7 @@ https://stackoverflow.com/questions/64060944/how-to-implement-a-stack-with-push-
 
 
 https://github.com/dleurs/Flutter-Navigator-2.0-demo-with-Authentication-mecanism/blob/master/lib/src/navigation/my_router_delegate.dart
+
+
+
+https://github.com/CoreLine-agency/flutter_requery#cache-key

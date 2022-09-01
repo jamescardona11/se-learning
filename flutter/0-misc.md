@@ -234,3 +234,8 @@ Busco que sea más descriptivo lo que vamos a encontrar en cada carpeta (**featu
     ----------home_page.dart
     ----utils
     ```
+
+
+
+    Ciclo de vida
+    https://medium.com/@resand/ciclo-de-vida-de-flutter-para-desarrolladores-android-e-ios-4bc4dfcd7169

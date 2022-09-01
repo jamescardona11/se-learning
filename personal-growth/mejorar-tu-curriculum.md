@@ -1,22 +1,15 @@
 # Mejorar tu curriculum
-MI GPA 2,9 jajaja
+
 
 https://www.carrus.io
 CURSO: https://www.tryexponent.com/courses/software-engineering
-Templates: - Buy https://www.faangtechleads.com/
+https://www.tryexponent.com/courses/get-the-interview/sample-pm-resume
+
 Tools: 
 - https://resumeworded.com/
 - https://www.topresume.com/
 
 
-Example:
-** https://resumeworded.com/resume-templates#signupmodal
-* https://www.rezi.ai/resume-templates?resume-sample=programming
-** https://www.wozber.com/en-gb/cv-templates/ats-friendly
-https://www.overleaf.com/project/62c4ee8f8371163b06f186cd
-https://www.overleaf.com/project/62c4e811d7d9e785484b0e4d
-https://www.tryexponent.com/courses/get-the-interview/sample-pm-resume
-https://drive.google.com/file/d/1Tfh5JzCVN2nBLmCZXQwm0jJAXC2om2xf/view
 
 ### The Resume That Got Me Into Google and Bloomberg:
 -> https://www.youtube.com/watch?v=aHB8bx4P7TE&t=93s
@@ -94,6 +87,7 @@ https://www.youtube.com/watch?v=Gj0k_fEszV8
 * Number, impact
 * Make interest quete and sweet
 * Show the competition
+* Templates: - Buy https://www.faangtechleads.com/
 
 
 ### Create Your Resume for Google: Tips and Advice

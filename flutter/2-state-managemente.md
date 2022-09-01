@@ -8,4 +8,4 @@ Pragmatic way of managing state in flutter
 Problems
 - Strongly coupling widgets
 - Globally tracking state
-- calling setstate from outside
+- calling setState from outside
