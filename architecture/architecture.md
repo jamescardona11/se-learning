@@ -131,6 +131,98 @@ MVC = Domain - xml - Activity
 MVP = Domain - Activity - Presenter
 MVVM = Domain - Activity - Observables
 
+**Una capa de presentación, lógica y otra acceso a datos**
+
+
+### Arquitectura del software
+REF= https://www.youtube.com/watch?v=MbX0hGRiJm8
+"Parabola del ciego y el elefante"
+- Por qué? Resolver Sistemas complejos
+- Para qué? "Calidad del software".... desarrollo efectivo(no frágil), eficaz y eficiente. Escalable y adaptabilidad. Depende de Mantenibilidad
+
+- Cuándo? 1960-1990
+- Dónde? The humble programmer
+- Quién? Edsger Dijkstra
+
+El código tiende hacer aburrido.
+
+Top-Down: Hacemos arquitectura y luego vemos como encaja
+Down-Top: La arquitectura surge y se va construyendo
+
+Aplicar el principio OpenClose por medio de Liskov
+
+
+El largo camino de enterarte de lo que estan diciendo
+
+DDD una manera de pensar
+- Prioridades
+
+
+Cohesion -> Single responsabilty Principle (es la causa, no la consecuencia)
+
+Lo complejo en arq es intentar hacer algo muy grande sin entender el camino
+
+---
+#### TDD
+TDD => Prubas -> Implementación y Diseño
+No se añade código sin pruebas
+NO Estrategia de software
+Combatir miedos que tengo con TDD
+
+Estrategias:
+Viejos: Diseño -> implemetación -> pruebas
+Alternativo:  Diseño -> pruebas -> implemetación
+
+Tener pruebas buenas es mejor tenerlas que no
+-> No Es una estrategia de testing
+
+
+TSDD
+ATDD
+BTDD
+
+Se puede relajar o poner más duro con las pruebas
+TDD te ayuda a descubrir el diseño
+
+Se saca provecho en el Dominio (Si se tiene o no tienes conocimiento)
+
+SISTEMA
+Un sistema es un conjunto de componentes interactuando o interdependientes formndo un todo integrado. Cada sistema esta delimitado por sus limites espacio/temporales e influenciado por su entorno descrito por su estructura y proposito y expresado en su funcionalidad
+
+
+SISTEMA COMPLEJO
+El que excede la complejidad humana
+
+Objetivo Software
+Eficacia y Eficiencia
+
+
+### Lenguajes de programación y paradigmas
+- Fuertemente tipados, Debilmente tipados y Inferencia de tipos (Typescript)
+- Compilador, interpretado y Maquinas virtuales un intermedio
+
+
+Paradigmas de software: Forma de ver el software
+Imperativo => Decirle que hacer
+Funcional => NO Asignaciones, NO Variables, NO bucles. = Recursividad y funciones
+No por tener funciones de orden superior un lenguage ya es Declarativo
 
 
 
+Maquina de Turing: Paradigma imperativo
+Cálculo Lambda: Paradigma funcional (Math)
+Cláusulas de Horn: Paradigma lógico
+
+Declarativo: unión entre funcional y lógico
+
+Tipos de paradigmas de lenguajes
+Paradigma, Orientado a Procesos, Orientado a Datos, Orientado a Objetos
+* Concurrente, Eventos, Aspectos, Exotéricos
+
+No porque uses clases y herencia estás haciendo programación orientada a Objetos
+-> Muchas cosas adicional
+
+"Faltan desarrolladores de calidad"
+
+No se trata de que mis programas funcionen; Funcionen y se puedan modificar
+- Legibilidad: Software Autoexplicativo, Consistente, Minimoa
