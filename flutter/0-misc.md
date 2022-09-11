@@ -239,3 +239,15 @@ Busco que sea más descriptivo lo que vamos a encontrar en cada carpeta (**featu
 
     Ciclo de vida
     https://medium.com/@resand/ciclo-de-vida-de-flutter-para-desarrolladores-android-e-ios-4bc4dfcd7169
+
+
+# Flutter POD
+https://www.youtube.com/watch?v=ffg6-R_P-bc
+### Mistakes
+- Muchas cosas por aprender para ser profesional
+- Flutter command line
+
+#### State Management
+Correr tu propia solución para state management
+Notifier class
+Observable

@@ -9,3 +9,5 @@ Problems
 - Strongly coupling widgets
 - Globally tracking state
 - calling setState from outside
+
+https://docs.flutter.dev/development/data-and-backend/state-mgmt/simple

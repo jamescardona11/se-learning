@@ -32,31 +32,10 @@ Mejor soporte a web, manejo de rutas dinamicas, deep links y otros
 Es el corazón del navegador
 
 
-https://github.com/csells/go_router/blob/main/go_router/lib/src/go_router_delegate.dart
 
-https://github.com/flutter/packages/blob/main/packages/go_router/lib/src/delegate.dart
-
-
-https://github.com/slovnicki/beamer/blob/master/package/lib/src/beamer_delegate.dart
-
-
-https://github.com/slovnicki/beamer/blob/master/package/lib/src/beam_location.dart
-
-
-https://github.com/tomgilder/routemaster/tree/main/lib/src
-
-
-https://github.com/HosseinYousefi/yeet/blob/master/lib/src/yeeter_delegate.dart
-
-
-https://github.com/lukepighetti/fluro/tree/main/lib/src
-
-
-https://stackoverflow.com/questions/64060944/how-to-implement-a-stack-with-push-and-pop-in-dart
-
-
-https://github.com/dleurs/Flutter-Navigator-2.0-demo-with-Authentication-mecanism/blob/master/lib/src/navigation/my_router_delegate.dart
-
-
-
-https://github.com/CoreLine-agency/flutter_requery#cache-key
+NAVIGATE -> add
+START  -> clear + add
+START Varias Rutas -> clear + add++
+POP -> pop
+POPUNTIL (String) -> takewhile
+POPTOFIRST -> clear - first
