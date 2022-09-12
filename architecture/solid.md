@@ -1,5 +1,9 @@
 # SOLID
 
+BUENA REF
+https://github.com/LSIND/SOLID-principles
+
+
 ![](images/solid_gola.jpeg)
 
 ## Principios SOLID - 5 + 1 
@@ -211,4 +215,11 @@ El principio de segregación de la interface nos indica que no se debe implement
 Este principio nos está recomendando que no debemos definir interfaces con muchos métodos sino con pocos y muy relacionados.
 
 
+## SOLID principles can go wrong
+REF = https://medium.com/@arpytoth/solid-principles-can-go-wrong-cc0bab8ec660
 
+Sin experiencia(o poca) esto puede ser un desastre,
+
+Como puede ver, el código es realmente agradable, tiene todas las cosas sofisticadas, herencia, patrón de fábrica, etc. El autor probablemente esté muy orgulloso de su diseño SÓLIDO.
+
+**TIP** Bueno, creo que esto es una basura sobredimensionada 💩. Creo que siempre debemos implementar lo más simple que funcione, nada más y nada menos.
