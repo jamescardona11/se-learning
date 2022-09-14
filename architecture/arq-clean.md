@@ -82,3 +82,32 @@ Clean pone el **CORE** en el centro, es decir las reglas de negocio y modelos de
 - Data Layer: database, UI, storage, and network. Entity repository implementation and business logic.
 
 
+
+## A Guided Tour inside a clean architecture code base.
+REF = https://proandroiddev.com/a-guided-tour-inside-a-clean-architecture-code-base-48bb5cc9fc97
+The core principles of the clean approach can be summarized as followed:
+
+- El código de la aplicación se separa en capas.
+Estas capas definen la separación de preocupaciones dentro del código base.
+
+- Las capas siguen una estricta regla de dependencia.
+Cada capa solo puede interactuar con las capas debajo de ella.
+
+- A medida que avanzamos hacia la capa inferior, el código se vuelve genérico.
+Las capas inferiores dictan políticas y reglas, y las capas superiores dictan detalles de implementación, como la base de datos, el administrador de redes y la interfaz de usuario.
+
+![](images/dependecy_rule.jpeg)
+
+Llamar Mappers a los DTOS para que se entienda más
+Es transformar la información de afuera de nuestro dominio a nuestro dominio
+
+LA UI puede ser un MVP, MVC
+
+## DDD vs Clean architecture: hosting the business logic
+Hay dos tipos de codigo, business and plumbing(plomeria)
+
+
+## Thoughts on Clean Architecture
+Volátil vsComponentes rígidos
+
+Las capas y la arquitectura no tienen sentido si no tenemos especial cuidado en asignar responsabilidades claras.

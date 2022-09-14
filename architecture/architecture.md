@@ -260,3 +260,63 @@ Arquitectura de software: Es parecido a  Diseño de software
 ## Cómo estructurar tu project de ReactJs?
 REF= https://www.youtube.com/watch?v=5LqhlCd2_nE
 
+
+## Capas, cebollas y colmenas: arquitecturas en el backend
+REF= https://www.adictosaltrabajo.com/2019/07/02/capas-cebollas-y-colmenas-arquitecturas-en-el-backend/
+
+Lo primero que tenemos que dejar claro es qué entendemos por arquitectura. La arquitectura de un sistema software es la definición de qué componentes constituyen ese sistema, sus responsabilidades y las relaciones de uso y dependencia entre ellos. Es, por tanto, completamente independiente de la tecnología que se utilice y no debería representar en ningún momento el framework, la base de datos o la forma de interactuar con el usuario.
+
+Al hablar de **arquitectura multilayer** podemos diferenciar además entre sistemas estrictos (strict layered systems) y relajados (relaxed layered systems)
+
+Un sistema estricto es aquel en el que una capa solo depende directamente de la capa inmediatamente inferior, mientras que en un sistema relajado puede hacerlo de todas las que hay por debajo aunque no sean contiguas. Más adelante veremos para qué es esto útil.
+
+
+Hemos visto que las dependencias van de arriba hacia abajo.
+Pero en algunos casos necesitamos que haya una comunicación de abajo hacia arriba, entonces el patrón observer nos puede ayudar con eso.
+
+
+### ONION
+
+![](images/onion.png)
+![](images/onion_aplanado.png)
+
+### Hexagonal (Ports and Adapters)
+El objetivo de la arquitectura hexagonal es poner, una vez más, en el centro del sistema toda la lógica propia del dominio y definir unas fronteras muy claras y unos mecanismos de **transformación con el exterior**
+
+![](images/hexagonal.png)
+
+Nuestra arquitectura se compondrá de tres cosas:
+la lógica core de la aplicación, los puertos y los adaptadores
+
+Cualquier comunicación con el exterior se hará única y exclusivamente a través de los puertos y adaptadores, que se encargarán de la conversión de datos para que dentro de las fronteras todo esté en nuestro idioma.
+
+
+Los puertos son las interfaces que definen la interacción con el exterior y exponen únicamente datos de nuestro dominio, dejando que toda la lógica de transformación esté de puertas afuera y no se contamine el interior.
+
+Una cosa importante a tener en cuenta (tal y como se ve en la imagen de arriba) es que un único puerto puede tener más de un adaptador asociado
+
+Además, en la imagen habréis visto que tanto puertos como adaptadores están divididos en primarios y secundarios (también llamados driving y driven respectivamente). Los primarios definen el comportamiento que expone nuestro sistema al exterior, la comunicación con el usuario (sea este una persona, otra aplicación…). Por su parte los secundarios definen la interacción que necesita nuestro sistema con terceros (base de datos, cachés, otros sistemas) para ejecutar correctamente sus funcionalidades de principio a fin. A grandes rasgos podríamos decir que los primarios son de entrada y los secundarios son de salida en el sentido de la dirección en la que viajan las peticiones.
+
+
+
+Los puertos primarios son interfaces de funcionalidad del sistema, por lo que estarán implementadas por la capa de servicios dentro del hexágono. Los adaptadores primarios usan, y no implementan, dichos puertos para comunicarse como necesiten con el interior.
+Los puertos secundarios, por su parte, sirven de interfaz de salida para que el interior se comunique con sistemas externos. En este sentido el core utilizará los puertos secundarios, que esta vez serán implementados por los adaptadores secundarios.
+
+![](images/componentes_hex.png)
+
+![](images/hex_extendido_aplanado.png)
+
+
+### Clean architecture
+
+El objetivo es el mismo que hemos estado persiguiendo hasta ahora, y la implementación es a grandes rasgos una hexagonal aunque cambiando algunos nombres y definiendo mínimamente la estructura interna
+
+![](images/cleanarchitecture.jpeg)
+https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+
+- Entidades = Domain
+- Casos de uso = lógica propia de la aplicación
+- Use Case Input Port (si son primarios)
+- Use Case Output Port (si son secundarios),
+- implementación de los de entrada está en lo que se denomina Use Case Interactor.
+- adaptadores: controladores, presentadores, acceso a terceros
