@@ -320,3 +320,74 @@ https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 - Use Case Output Port (si son secundarios),
 - implementación de los de entrada está en lo que se denomina Use Case Interactor.
 - adaptadores: controladores, presentadores, acceso a terceros
+
+
+
+## Getting Your Software Architecture Right
+Composite Component Architecture
+
+La arquitectura de una aplicación es la estructuración de todo el sistema de software. Esto debe estructurarse junto con un conjunto de reglas según las cuales se debe implementar el sistema de software. Tal conjunto de reglas garantiza que la conformidad con los aspectos cualitativos conducirá al proyecto al éxito a largo plazo. En mi opinión, la arquitectura incluye los siguientes elementos:
+
+- Modularización
+- uso de patrones
+- Reglas y guías
+- Documentación
+
+La arquitectura en el desarrollo de software puede significar todo o nada
+
+**Niveles arquitectónicos**
+- La modularización es uno de los propósitos más importantes de la arquitectura.
+
+![](images/modularizacion.png)
+
+
+Ahora, cada nivel de la estructura de árbol se puede asignar a un elemento de implementación.
+![](images/implementacion.png)
+
+
+**Definición de términos**
+Quien haya estudiado temas de arquitectura sabrá que podemos tener diferentes terminos para referirnos a arquitectura.
+
+
+Al igual que con la Arquitectura del Sistema , todavía existen patrones que nos dejan soluciones listas para usar: El patrón de la Arquitectura del Software .
+- Monolith
+- Plug-in
+- Pipes and Filters
+- Multiple layers
+
+
+**Implementación (Diseño y Codificación)**
+Acá va la logica
+
+### DEFINICIÓN
+La arquitectura describe la estructura jerárquica de un sistema de software para lograr los aspectos cualitativos y, por lo tanto, los objetivos a largo plazo del proyecto.
+
+
+## Chapter 1. Software Architecture 
+REF= https://www-oreilly-com.translate.goog/library/view/building-evolutionary-architectures/9781491986356/ch01.html?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=en&_x_tr_pto=wapp
+
+Ralph Johnson definió la arquitectura de software como "lo importante (sea lo que sea)". El trabajo del arquitecto es comprender y equilibrar todas esas cosas importantes (cualesquiera que sean).
+
+Por lo tanto, el oficio de la arquitectura de software se manifiesta en la capacidad de los arquitectos para analizar los requisitos comerciales y de dominio junto con otros factores importantes para encontrar una solución que equilibre todas las preocupaciones de manera óptima
+
+
+*Las iliadas*
+![](images/iliades.png)
+
+Al crear software, los arquitectos deben determinar la más importante de estas "-capacidades". Sin embargo, muchos de estos factores se oponen entre sí.
+
+Tomar decisiones de arquitectura requiere un equilibrio y ese equilibrio nos lleva a compensaciones.
+
+### Arquitectura evolutiva
+A pesar de nuestros mejores esfuerzos, el software se vuelve más difícil de cambiar con el tiempo. Por una variedad de razones, las partes que componen los sistemas de software desafían la modificación fácil, volviéndose más frágiles e intratables con el tiempo. 
+
+Un deterioro desafortunado, a menudo llamado bit rot , ocurre en muchas organizaciones. Los arquitectos eligen patrones arquitectónicos particulares para manejar los requisitos comerciales y las "capacidades", pero esas características a menudo se degradan accidentalmente con el tiempo
+
+### Cambio incrementado
+El cambio incremental describe dos aspectos de la arquitectura del software: cómo los equipos construyen el software de forma incremental y cómo lo implementan.
+
+Durante el desarrollo, una arquitectura que permite cambios pequeños e incrementales es más fácil de evolucionar porque los desarrolladores tienen un alcance de cambio más pequeño. Para la implementación, el cambio incremental se refiere al nivel de modularidad y desacoplamiento de las características comerciales y cómo se asignan a la arquitectura.
+
+### EQUIPOS
+Estructure los equipos para que se parezcan a su arquitectura de destino y será más fácil lograrlo.
+

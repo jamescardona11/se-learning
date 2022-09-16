@@ -84,7 +84,7 @@ Puedes implementar el patrón de diseño adapter para las FAT interfaces
 
 #### * D:
 Que el código que tenemos no dependa de factores externos
-"Las clases de alto nivel no deberían depender de las clases de bajo nivel, ambas deberían depender de abstracciones" y "Las abstracciones no deberían depender de los detalles, sino  que los detalles deberían depender de los detalles"
+"Las clases de alto nivel no deberían depender de las clases de bajo nivel, ambas deberían depender de abstracciones" y "Las abstracciones no deberían depender de los detalles, sino  que los detalles deberían depender de los abstracciones"
 
 El código sufre mucho acoplamiento
 Muy complicado de hacer test
@@ -223,3 +223,108 @@ Sin experiencia(o poca) esto puede ser un desastre,
 Como puede ver, el código es realmente agradable, tiene todas las cosas sofisticadas, herencia, patrón de fábrica, etc. El autor probablemente esté muy orgulloso de su diseño SÓLIDO.
 
 **TIP** Bueno, creo que esto es una basura sobredimensionada 💩. Creo que siempre debemos implementar lo más simple que funcione, nada más y nada menos.
+
+
+----
+## Wrong Solid
+https://www.entropywins.wtf/blog/2017/02/17/why-every-single-argument-of-dan-north-is-wrong/
+
+
+
+## Putting SOLID in Perspective
+Muchos han puesto solid como "SOLID as rules"
+
+Critica Externa: https://dannorth.net/2021/03/16/cupid-the-back-story/
+
+describiría los principios SOLID como una heurística que a veces resulta útil .
+
+Las heurísticas son métodos o estrategias que a menudo conducen a la solución de un problema pero no se garantiza que tengan éxito .
+
+**Principio de responsabilidad única (SRP)**
+Subjetivo
+
+**Principio abierto cerrado (OCP):**
+demás, diría que OCP aparece más o menos mucho tiempo como "capacidad de conexión", que es una espada de doble filo que ha ayudado y obstaculizado a cualquiera que haya sido desarrollador durante un período de tiempo prolongado.
+
+**Principio de sustitución de Liskov (LSP):**
+Una lectura casual de eso solo lo llevará a una reformulación del polimorfismo , lo cual está bien, supongo, pero en realidad no nos ayuda necesariamente a escribir un mejor código.
+
+**Principio de segregación de interfaces (ISP):**
+Veo que el ISP surge mucho más a menudo cuando se crea código de infraestructura, pero ocasionalmente en otro código donde es valioso separar la interfaz para mutar un objeto y una interfaz separada para los consumidores de datos.
+
+**Principio de inversión de dependencia :**
+
+
+
+Para resumir los principios y su utilidad:
+
+SRP : la separación de preocupaciones es importante en el código, pero el SRP está demasiado vagamente redactado por sí mismo para ser de gran ayuda.
+O CP: ocasionalmente es útil para pensar en una arquitectura prevista o ajustar una arquitectura que está resultando difícil de cambiar. No creo que realmente surja con demasiada frecuencia.
+L SP: las abstracciones con fugas pueden ser dañinas, por lo que no tengo ningún argumento aquí, pero como todas las cosas, el impacto es bastante variable y no necesariamente convertiría esto en una regla estricta.
+I SP: importante aquí y allá si está creando API para otros desarrolladores, pero probablemente no se aplique a diario.
+DIP : exagerado, y probablemente causa un poco más de daño que bien a las personas que aplican esto en exceso
+
+
+
+
+## CUPID
+Los principios son como las reglas: o se cumple o no se cumple. Esto da lugar a **“conjuntos acotados”** de seguidores y ejecutores de reglas en lugar de “conjuntos centrados” de personas con valores compartidos.
+
+Empece a pensar en propiedades.
+Las propiedades definen un objetivo o centro hacia el que moverse. Su código solo está más cerca o más lejos del centro, y siempre hay una dirección de viaje clara. Puede usar propiedades como lente o filtro para evaluar su código y puede decidir cuáles abordar a continuación
+
+### Propiedades de las propiedades
+- articulate (entender)
+- Assess (evaluar)
+- Adopt (adoptar)
+
+Las propiedades deben leerse de la pespectiva humana no del código.
+CUPID se trata de como se siente trabajar con código, 
+
+### Composable
+- El software es fácil de usar, se usa y se vuelve a usar.
+- **Small surface area** Código pequeño es más fácil de llevar, Hay un punto dulce de cohesión "perfecta" entre fragmentado e hinchado.
+- **Intention-revealing** El código revelador de intenciones es fácil de descubrir y de evaluar.
+- **Minimal dependencies** El código con dependencias mínimas le da menos de qué preocuparse y reduce la probabilidad de incompatibilidades de versión o biblioteca
+
+
+### Unix philosophy
+La filosofía de Unix dice que hay que escribir [componentes] que funcionen bien juntos, descritos en la propiedad Composability anterior, y que hagan una cosa y la hagan bien .
+
+#### Propósito único vs responsabilidad única 
+A primera vista, esto parece el principio de responsabilidad única (SRP), y para ciertas interpretaciones de SRP hay cierta superposición
+
+Pero “hacer una cosa bien” es una perspectiva de afuera hacia adentro; es la propiedad de tener un propósito específico, bien definido y comprensivo. SRP es una perspectiva de adentro hacia afuera: se trata de la organización del código.
+
+
+
+### Predictable
+El código debe hacer lo que parece que hace, consistente y confiablemente, sin sorpresas desagradables. Debería ser no solo posible sino fácil de confirmar esto. En este sentido, la previsibilidad es una generalización de la comprobabilidad.
+
+**Behaves as expected**
+El código predecible debe comportarse como se espera , y debe ser determinista y observable .
+
+**Deterministic** 
+El determinismo es un tema amplio. A los efectos de la previsibilidad, el código determinista debe ser robusto , fiable y resistente .
+
+Robustez es la amplitud o integridad de las situaciones que cubrimos. Las limitaciones y los casos límite deberían ser obvios.
+Confiabilidad es actuar como se espera en las situaciones que cubrimos. Deberíamos obtener los mismos resultados cada vez.
+La resiliencia es qué tan bien manejamos situaciones que no cubrimos; Perturbaciones inesperadas en las entradas o en el entorno operativo.
+
+**Observable**
+El código debe ser observable en el sentido de la teoría de control : podemos inferir su estado interno a partir de sus salidas
+
+
+### Idiomatic
+El mayor rasgo de programación es la empatía; empatía por tus usuarios; empatía por la gente de apoyo; empatía por los futuros desarrolladores; cualquiera de los cuales puede ser usted en el futuro. **Escribir “código que los humanos puedan entender” significa escribir código para otra persona**. Esto es lo que significa el código idiomático.
+
+
+### Domain-based structure
+Escribimos software para satisfacer una necesidad. Esto puede ser específico y situacional, o genérico y de largo alcance. Cualquiera que sea su propósito, el código debe transmitir lo que está haciendo en el lenguaje del dominio del problema, para minimizar la distancia cognitiva entre lo que escribe y lo que hace. Esto es más que “usar las palabras correctas”.
+
+
+**Límites basados ​​en dominios**
+Cuando estructuramos el código de la manera que queremos y lo nombramos de la manera que queremos, los límites del módulo se convierten en límites del dominio y la implementación se vuelve sencilla. 
+
+
+## SOLID VS CUPID
