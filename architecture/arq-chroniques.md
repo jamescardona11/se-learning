@@ -1,5 +1,11 @@
 # The Software Architecture Chronicles
 
+PENDIENTE:
+CRQS
+SOA
+EVENTOS
+
+
 ## Layered Architecture
 
 **Ventajas**
@@ -119,6 +125,42 @@ El viewModel es lo que Martin Fowler llama Presentation Model.
 - Presenter Recibe una HTTP reques y dispara un command o query, usa la información que retorna la query, un ViewModel a Template and a template engine to generate the HTML and send it back to the client.
 
 
+## EBI
+La arquitectura Entity-Boundary-Interactor fue dada a conocer por Robert C Martin. Sin embargo esto fue publicado por Ivar Jacobson en 1992.
+
+### Entity
+Los objetos entidad contienen los datos utilizados por el sistema y todo el comportamiento acopado naturalmente a estos datos.
+Cada objeto Entity representa un concepto relevante para el dominio del problema y que contiene identidad y datos persistentes.
+
+"En ocasiones, los principiantes solo pueden usar objetos de entidad como portadores de datos y colocar todo el comportamiento dinámico en objetos de control […]. Sin embargo, esto debe evitarse. […] En cambio, se debe colocar una gran cantidad de comportamiento en los objetos de entidad."
+
+Ivar Jacobson 1992, págs. 134
+
+### Boundary(Interfaz)
+Los objetos boundary modelan la interfaz con el sistema.
+
+"[…] todo lo relacionado con la interfaz del sistema se coloca en un objeto de interfaz"
+Toda la funcionalidad que depende del entorno del sistema (herramientas y mecanismos de entrega) pertenece a los objetos de límite.
+
+Cualquier interacción del sistema con un actor pasa por un objeto Límite
+![](images/layered_architecture_ebi.webp)
+
+
+### Interactor(Control)
+Los objetos de Interactor tendrán un comportamiento que no está ligado naturalmente a ninguno de los otros tipos de objetos.
+
+"El comportamiento que permanece después de que los objetos de interfaz y los objetos de entidad hayan obtenido sus partes se colocará en los objetos de control."
+
+Por lo tanto, Jacobson piensa en los objetos de control no solo como los objetos que organizan un caso de uso, sino también como cualquier objeto que tiene un comportamiento relevante para un caso de uso pero que no es un límite ni una entidad.
+
+Comparando con mi experiencia, diría que él llama interactuadores a lo que yo llamo Servicios de Aplicación (que organizan casos de uso) y Servicios de Dominio (que contienen el comportamiento del Dominio pero no son entidades).
+
+La razón de estos objetos Interactor intermediarios es muy importante, si no los usamos pondremos la lógica de caso de uso en las entidades. Las entidades se utilizan en varios casos de uso y tiene, por tanto, un uso genérico.
+
+
+EBI es para backend lo que MVC fue para frontend.
+
+
 ## DDD
 
 Algunos conceptos
@@ -223,5 +265,320 @@ Sin embargo, Onion Architecture también nos dice que, en las aplicaciones empre
 - Las capas exteriores dependen de las capas interiores;
 - Las capas internas no conocen las capas externas.
 
+![](images/layered_architecture_onion.png)
 
 ## Clean Architecture
+La arquitectura limpia aprovecha conceptos, reglas y patrones conocidos y no tan conocidos, y explica cómo encajarlos, para proponer una forma estandarizada de crear aplicaciones.
+
+
+### Objetivos
+Son los mismos detrás de la onion, hexagonal.
+
+- Independencia de herramientas;
+- Independencia de los mecanismos de entrega;
+- Testabilidad en aislamiento.
+
+![](images/layered_architecture_clean_1.jpeg)
+Como dice el propio tío Bob en su publicación, el diagrama anterior es un intento de integrar las ideas de arquitectura más recientes en una sola idea procesable.
+
+### Donde coinciden, 
+- Externalización de herramientas y mecanismos de entrega
+  La Arquitectura Hexagonal se enfoca en externalizar las herramientas y los mecanismos de entrega de la aplicación, usando interfaces (puertos) y adaptadores.
+
+- Dirección de dependencias
+  En la Arquitectura Hexagonal, no tenemos nada que nos diga explícitamente la dirección de las dependencias. Sin embargo, podemos inferirlo fácilmente: La Aplicación tiene un puerto (una interfaz) que debe ser implementado o utilizado por un adaptador. Entonces, el adaptador depende de la interfaz, depende de la aplicación que está en el centro. Lo que está afuera depende de lo que está adentro, la dirección de las dependencias es hacia el centro.
+  
+  Onion lo dice en el segundo manifiesto.
+  
+  El diagrama de Arquitectura Limpia, por su parte, es bastante explícito al señalar que la dirección de las dependencias es hacia el centro.
+
+- Capas
+  El diagrama de Arquitectura Hexagonal solo nos muestra dos capas: Dentro de la aplicación y fuera de la aplicación. The Onion Architecture, por otro lado, trae a la mezcla las capas de aplicación identificadas por DDD: Application Services que contiene la lógica del caso de uso; Servicios de Dominio que encapsulan la lógica del dominio que no pertenece a las Entidades ni a los Objetos de Valor; y las Entidades, Objetos de Valor, etc.
+
+  En comparación con la Arquitectura Cebolla, la Arquitectura Limpia mantiene la capa de Servicios de Aplicación (Casos de Uso) y la capa de Entidades pero parece olvidarse de la capa de Servicios de Dominio. Sin embargo, al leer la publicación del tío Bob nos damos cuenta de que considera una Entidad no solo como una Entidad en el sentido de DDD sino como cualquier objeto de Dominio: 
+
+- Test
+  Todas quieren ayudarnos a hacer test más fáciles
+
+
+Por el momento nada nuevo, pero veamos el diagrama al pie del diagrama de arq limpia...
+
+### De pie sobre los hombros de MVC y EBI
+El diagrama en la parte inferior explica como funciona el flujo de control.
+Ese pequeño diagrama no nos da mucha información pero otras publicaciones y post del tio bob si.
+
+![](images/layered_architecture_clean_2.png)
+
+En el diagrama de arriba, en el lado izquierdo, tenemos la vista y el controlador de MVC. Todo lo que esta dentro/entre las lineas dobles negras representa el modelo en MVC. 
+
+Siguiendo el flujo de control, tenemos una Solicitud HTTP que llega al Controlador. El controlador entonces:
+
+- Desmantelar la Solicitud;
+- Crear un Modelo de Solicitud con los datos relevantes;
+- Ejecutar un método en el interactor (que se inyectó en el controlador utilizando la interfaz del interactor, el límite), pasándole el modelo de solicitud;
+- El interactor:
+  * Utiliza la implementación de la puerta de enlace de la entidad (que se inyectó en el Interactor mediante la interfaz de la puerta de enlace de la entidad) para encontrar las entidades relevantes;
+  * Orquesta interacciones entre Entidades;
+  * Crea un Modelo de Respuesta con los datos resultado de la Operación;
+  * Rellena el presentador dándole el modelo de respuesta;
+  * Devuelve el presentador al controlador;
+- Utiliza el Presentador para generar un ViewModel;
+- Vincula el modelo de vista a la vista;
+- Devuelve la Vista al cliente.
+
+### Conclusión
+No diría que la Arquitectura Limpia es revolucionaria porque en realidad no trae un nuevo concepto o patrón innovador a la mesa.
+
+Sin embargo, yo diría que es un trabajo de suma importancia:
+
+- Recupera conceptos, reglas y patrones algo olvidados;
+- Aclara conceptos, reglas y patrones útiles e importantes;
+- Nos dice cómo encajan todos estos conceptos, reglas y patrones para brindarnos una forma estandarizada de crear aplicaciones complejas teniendo en cuenta la mantenibilidad.
+
+
+## Event-Driven Architecture
+
+El uso de eventos para diseñar aplicaciones es una práctica que parece existir desde finales de la década de 1980. Podemos usar eventos en cualquier parte del frontend o backend. Cuando se presiona un botón, cuando se modifican algunos datos o se realiza alguna acción de backend.
+
+### What/When/Why
+Para evitar convertir nuestro código base en una gran pila de código espagueti, debemos mantener el uso de eventos limitado a situaciones claramente identificadas. En mi experiencia, hay tres casos en los que usar eventos:
+
+- Para desacoplar componentes
+- Para realizar tareas asíncronas
+- Para realizar un seguimiento de los cambios de estado (registro de auditoría)
+
+
+
+## FROM CQS a CQRS
+En una aplicación centradda en datos, la aplicación no tiene conocimiento de los procesos comerciales, lo que el dominio no puede tener ningún verbo y no puede hacer nada más que cambiar los datos sin procesar. 
+
+Una aplicación no trivial y realmente útil tiene como objetivo eliminar la carga del "proceso" de los hombros del usuario al capturar sus intenciones, convirtiéndola en una aplicación capaz de procesar comportamientos en lugar de simplemente almacenar datos.
+
+
+### Command Query Separation
+Mayer defiende que por principio, no deberiamos tener métodos que cambien datos y devuelvan datos.
+
+- QUERY: Devuelven datos per no l;os cambian, por lo que no tiene efectos secundarios.
+- COMMAND: Cambia datos pero no devuelve datos.
+  
+En otras palabras, hacer una pregunta no debe cambiar la respuesta y hacer algo no debe devolver una respuesta,  lo que también ayuda a respetar el Principio de Responsabilidad Única.
+
+Excepciones: Stack and Queue
+
+### Command Pattern
+La idea principal es alejarnos de una aplicación centrada en datos y pasar a una aplicación centrada en procesos, que tienen conocimiento del dominio y conocimiento de los procesos de la aplicación.
+
+En la practica en lugar que se ejecute la acción crear usuario, luego activar usuario y luego enviar correo hariamos que se ejecute la acción registrar usuario.(que ejecuta las tres anteriores)
+
+
+### Command Bus
+Separar lo que cambia de lo que no cambia.
+Lo que cambia son los datos que podemos contenerlos en un DTO y lo que no cambia que es la lógica que se ejecutara (lo llamaremos handler).
+
+
+### Command Query Responsibility Segregation
+
+![](images/layered_architecture_cqrs.png)
+
+
+### Command side
+Como se explicó anteriormente, al usar comandos, cambiamos la aplicación de un diseño centrado en datos a un diseño de comportamiento, que se alinea con el diseño basado en dominios.
+
+Al eliminar las operaciones de lectura del código que procesa los comandos, del Dominio, los problemas identificados por Greg Young simplemente desaparecen:
+
+- Los objetos de dominio de repente ya no tienen la necesidad de exponer el estado interno;
+- Los repositorios tienen muy pocos o ningún método de consulta además de GetById;
+- Se puede tener un enfoque más conductual en los límites agregados.
+
+
+### Conclusión
+Esto se suma al rendimiento, pero también a la claridad y simplicidad de la base de código, a la capacidad de la base de código para reflejar el dominio y a la capacidad de mantenimiento de la base de código.
+
+Una vez más, se trata de encapsulación, bajo acoplamiento, alta cohesión y el principio de responsabilidad única.
+
+Sin embargo, es bueno tener en cuenta que aunque CQRS brinda un estilo de diseño y varias soluciones técnicas que pueden hacer que una aplicación sea muy robusta, eso no significa que todas las aplicaciones deban construirse de esta manera: debemos usar lo que necesitamos, cuando lo necesitamos.
+
+
+## DDD, Hexagonal, Onion, Clean, CQRS, … Cómo lo armo todo
+EL autor lo llama arquitectura explicita.
+
+Recordando EBI y Hexagonal.
+Ambos hacen una separación explícita de que código es interno a la aplicación, que es externo y que se usa parea conectar el código interno y externo.
+
+La hexagonal identifica explícitamente tres bloques fundamentales de código en un sistema.
+
+- Que hace posible ejecutar una interfaz de usuario, sea cual sea.
+- La business logic del sistema o el application-core que utiliza la interfaz de usuario para hacer que las cosas sucedan
+- Código de infraestructura, que conecta el nucleo de nuestra aplicación con herramientas como una base de datos, un motor de búsqueda o API de terceros.
+  
+![](images/layered_architecture_explicit_1.webp)
+
+**Flujo**
+Como puede imaginar, el flujo típico de la aplicación va desde el código en la interfaz de usuario, a través del núcleo de la aplicación hasta el código de infraestructura, regresa al núcleo de la aplicación y finalmente entrega una respuesta a la interfaz de usuario.
+
+![](images/layered_architecture_explicit_2_flow.webp)
+
+### Tools
+lejos del código más importante de nuestro sistema, el core de la aplicación, tenemos las herramientas que utiliza nuestra aplicación. Ex: BD, WebServices, API, etc.
+
+![](images/layered_architecture_explicit_3.webp)
+
+### Connecting the tools and delivery mechanisms to the Application Core
+La unidad de código que conecta las herramientas del núcleo de la aplicación seran **Adaptadores** como en la hexagonal.
+Primarios: Indican a la app que haga algo (controladores)
+Secundarios: Los que la app le dice que hacer (controlados)
+
+**Ports**
+Estos adaptadores no se crean para aleatoriamente. Se crean para adaptarse a un punto de entrada muy especifico el núcleo de la aplicación, un puerto.
+Esto no es más que especificación de como la tool puede usar el application-core, o cómo es usada por la application-core. En la mayoría de los lenguajes una forma fácil de hacer esto es por medio de *interfaces*, puede ser compuesta por interfaces y DTO.
+
+Es importante tener en cuenta que los puertos(interface) pertenecen al interior de business logic mientras que los adaptadores pertenecen al exterior.
+
+Para que esto funcione es importante que se satisfaga el application-core y no simplemente imitar las API de las herramientas.
+
+### Primary or Driving Adapters
+Los adaptadores primarios o de controlador envuelven un puerto y lo usan para decirle al núcleo de la aplicación qué hacer. Traducen todo lo que proviene de un mecanismo de entrega en una llamada de método en Application Core.
+
+![](images/layered_architecture_explicit_4.webp)
+
+### Secondary or Driven Adapters
+A diferencia de los adaptadores de controlador, que envuelven un puerto, los adaptadores controlados implementan un puerto , una interfaz, y luego se inyectan en el núcleo de la aplicación, donde sea que se requiera el puerto (sugerencia de tipo).
+
+![](images/layered_architecture_explicit_5.webp)
+
+### Inversion of control
+Una característica a tener en cuenta de este patrón es que los adapters dependen de una herramienta especifica y un puerto especifico(al implementar la interfaz). Pero nuestra business logic, solo depende del puerto(interfaz) que esta diseñado para adaptarse a las necesidades del business logic.
+
+Esto significa que la dirección de las dependencias es hacia el centro, es el principio de inversión del control a nivel arquitectónico .
+
+![](images/layered_architecture_explicit_6.webp)
+
+### Application Core organisation
+Usando Onion que recoge la información de DDD y y la dirección de las dependencias.
+
+#### Application
+Los casos de uso son los procesos que pueden ser activados por nuestro application-core por una o varias UI-screens.
+
+![](images/layered_architecture_explicit_7.webp)
+
+Esta capa contiene servicios de aplicaciones (y sus interfaces) como ciudadanos de primera clase, pero también contiene las interfaces de puertos y adaptadores (puertos) que incluyen interfaces ORM, interfaces de motores de búsqueda, interfaces de mensajería, etc. 
+
+Application service:
+- usar un repositorio para encontrar una o varias entidades;
+- decirle a esas entidades que hagan algo de lógica de dominio;
+- y use el repositorio para persistir las entidades nuevamente, guardando efectivamente los cambios de datos.
+
+
+#### Domain
+Los objetos en esta capa contienen los datos y la lógica para manipular esos datos, que son específicos del Dominio mismo y son independientes de los procesos comerciales que activan esa lógica, son independientes y completamente inconscientes de la Capa de Aplicación.
+
+
+![](images/layered_architecture_explicit_8.webp)
+
+**Domain Model**: En el mismo centro, sin depender de nada fuera de él, se encuentra el modelo de dominio, que contiene los objetos comerciales que representan algo en el dominio. Ejemplos de estos objetos son, en primer lugar, las entidades, pero también los objetos de valor, las enumeraciones y cualquier objeto utilizado en el modelo de dominio.
+
+
+### Components
+Como segregar los archivos:
+Paquete por función o paquete por componente.
+
+![](images/layered_architecture_explicit_9.webp)
+![](images/layered_architecture_explicit_10.webp)
+
+
+Estas secciones de código son transversales a las capas descritas anteriormente, son los componentes de nuestra aplicación. Ejemplos de componentes pueden serAutorización de autenticación,Facturación, Usuario, Revisión o Cuenta, pero siempre relacionados con el dominio. Los contextos acotados como Autorización y/o Autenticación deben verse como herramientas externas para las cuales creamos un adaptador y nos escondemos detrás de algún tipo de puerto.
+
+![](images/layered_architecture_explicit_11.webp)
+
+#### **Decoupling the components**
+Para desacoplar clases hacemos uso de Inyección de Dependencia, inyectando dependencias en una clase en lugar de instanciarlas dentro de la clase, e Inversión de Dependencia, haciendo que la clase dependa de abstracciones (interfaces y/o clases abstractas) en lugar de clases concretas. Esto significa que la clase dependiente no tiene conocimiento sobre la clase concreta que va a utilizar, no tiene referencia al nombre de clase completo de las clases de las que depende.
+
+De igual forma tener los componentes desacoplados significa que un componente no conoce nada de otro componente. 
+Acá entonces DI se queda corto.
+
+![](images/layered_architecture_explicit_12.png)
+
+
+#### Triggering logic in other components
+Cuando uno de nuestros componentes (componente B) necesita hacer algo cada vez que sucede algo más en otro componente (componente A), no podemos simplemente hacer una llamada directa desde el componente A a una clase/método en el componente B porque entonces A estaría acoplado a B.
+
+Sin embargo, podemos hacer que A use un despachador de eventos para enviar un evento de aplicación que se entregará a cualquier componente que lo escuche, incluido B, y el detector de eventos en B activará la acción deseada. Esto significa que el componente A dependerá de un despachador de eventos, pero estará desacoplado de B
+
+
+para hacer que esto sea más desacoplado podemos usar un **SHARED KERNEl**
+Esto significa que ambos componentes dependerán del kernel compartido, pero estarán desacoplados entre sí
+
+![](images/layered_architecture_explicit_13.webp)
+
+
+Este enfoque funciona tanto en aplicaciones monolíticas como en aplicaciones distribuidas como ecosistemas de microservicios. Sin embargo, cuando los eventos solo se pueden entregar de forma asíncrona, para contextos en los que la lógica de activación en otros componentes debe realizarse de inmediato, ¡este enfoque no será suficiente!
+
+#### Getting data from other components
+A mi modo de ver, un componente no puede cambiar datos que no "posee", pero está bien que consulte y use cualquier dato.
+
+##### Data storage shared between components
+Cuando un componente necesita usar datos que pertenecen a otro componente, digamos que un componente de facturación necesita usar el nombre de cliente que pertenece al componente de cuentas, el componente de facturación contendrá un objeto de consulta que consultará el almacenamiento de datos para esos datos. Esto simplemente significa que el componente de facturación puede conocer cualquier conjunto de datos, pero debe usar los datos que no “posee” como de solo lectura, por medio de consultas.
+
+##### Data storage segregated per component
+
+En este caso se aplica el mismo patrón, pero tenemos más complejidad a nivel de almacenamiento de datos. Tener componentes con su propio almacenamiento de datos significa que cada almacenamiento de datos contiene:
+
+- Un conjunto de datos que posee y es el único al que se le permite cambiar, lo que lo convierte en la única fuente de verdad;
+- Un conjunto de datos que es una copia de los datos de otros componentes, que no puede cambiar por sí solo, pero es necesario para la funcionalidad del componente y debe actualizarse cada vez que cambia en el componente propietario.
+
+Cada componente creará una copia local de los datos que necesita de otros componentes, para usar cuando sea necesario. Cuando los datos cambian en el componente que lo posee, ese componente propietario activará un evento de dominio que llevará los cambios de datos. Los componentes que tengan una copia de esos datos escucharán ese evento de dominio y actualizarán su copia local en consecuencia.
+
+### Flow of Control
+Como dije anteriormente, el flujo de control va, por supuesto, del usuario al Núcleo de la aplicación, a las herramientas de infraestructura, de regreso al Núcleo de la aplicación y finalmente al usuario. Pero, ¿cómo encajan exactamente las clases? ¿Cuáles dependen de cuáles? ¿Cómo los componemos?
+
+#### Without command/query bus
+#### With command/query bus
+En el caso de que nuestra aplicación utilice un bus de comando/consulta, el diagrama permanece más o menos igual, con la excepción de que el controlador ahora depende del bus y de un comando o una consulta. Instanciará el Comando o la Consulta, y lo pasará al Bus, quien encontrará el controlador apropiado para recibir y manejar el comando.
+
+En el siguiente diagrama, el controlador de comandos utiliza un servicio de aplicación. Sin embargo, eso no siempre es necesario, de hecho, en la mayoría de los casos, el controlador contendrá toda la lógica del caso de uso. Solo necesitamos extraer la lógica del controlador en un Servicio de aplicación separado si necesitamos reutilizar esa misma lógica en otro controlador.
+
+Es posible que haya notado que no hay dependencia entre el bus y el comando, la consulta ni los controladores. Esto se debe a que, de hecho, deberían ignorarse entre sí para proporcionar un buen desacoplamiento. La forma en que el bus sabrá qué controlador debe manejar qué comando o consulta debe configurarse con mera configuración.
+
+
+
+
+### Conclusión
+El objetivo, como siempre, es tener una base de código débilmente acoplada y altamente cohesiva, para que los cambios sean fáciles, rápidos y seguros de realizar.
+
+
+## Reflecting architecture and domain in code
+
+## Two mind maps
+
+El primero está compuesto por una serie de capas concéntricas, que al final se cortan para formar los módulos de dominio de la aplicación, los componentes. En este diagrama, la dirección de dependencia va hacia adentro, lo que significa que las capas externas conocen las capas internas, pero no al revés.
+![](images/layered_architecture_explicit_12.png)
+
+El segundo es un conjunto de capas horizontales, donde el diagrama anterior se encuentra en la parte superior, seguido del código compartido por los componentes (kernel compartido), seguido de nuestras propias extensiones a los lenguajes y, finalmente, los lenguajes de programación reales en la parte inferior. Aquí, la dirección de las dependencias va hacia abajo.
+
+![](images/layered_architecture_explicit_13.webp)
+
+
+### Estilo de codificación arquitectónicamente evidente
+ Inferir que es.
+ 
+ Hay dos ideas principales sobre cómo lograr un estilo de codificación arquitectónicamente evidente.
+
+ 1- El primero trata sobre el uso de los nombres de los artefactos de código (clases, variables, módulos,...) para transmitir tanto el dominio como el significado arquitectónico. 
+
+ 2- El segundo se trata de hacer que los subdominios sean explícitos como artefactos de nivel superior de nuestra base de código, como módulos de dominio, como componentes.
+
+### Making architecture explicit
+
+- La interfaz de usuario , que contiene el código que adapta un mecanismo de entrega a un caso de uso;
+- El núcleo de la aplicación , que contiene los casos de uso y la lógica del dominio;
+- La infraestructura , que contiene el código que adapta las herramientas/bibliotecas a las necesidades básicas de la aplicación.
+
+### Conclusión
+Una aplicación está compuesta por un dominio y una estructura técnica, la arquitectura. Esas son las diferencias reales en una aplicación, no las herramientas, bibliotecas o mecanismos de entrega utilizados. Si queremos que una aplicación se pueda mantener durante mucho tiempo, ambos deben ser explícitos en la base de código, para que los desarrolladores puedan conocerla, comprenderla, cumplirla y evolucionarla según sea necesario.
+
+Esta claridad nos ayudará a comprender los límites a medida que codificamos, lo que a su vez nos ayudará a mantener el diseño de la aplicación modular, con alta cohesión y bajo acoplamiento.
+
+Nuevamente, la mayoría de estas ideas y prácticas de las que he estado hablando en mis publicaciones anteriores provienen de desarrolladores mucho mejores y más experimentados que yo. Los he discutido extensamente con muchos de mis colegas en diferentes empresas, he experimentado con ellos en bases de código de aplicaciones empresariales y han funcionado muy bien para los proyectos en los que he estado involucrado.
+
+Sin embargo, creo que no hay  balas de plata , ninguna bota sirve para todos , no hay Santo Grial .
+
