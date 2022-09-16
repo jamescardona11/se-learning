@@ -227,6 +227,14 @@ No porque uses clases y herencia estás haciendo programación orientada a Objet
 No se trata de que mis programas funcionen; Funcionen y se puedan modificar
 - Legibilidad: Software Autoexplicativo, Consistente, Mínimo
 
+## Arquitecturas del software ágiles y pesadas ¿En qué consisten?
+Ver el bosque de la ladera no estar en el bosque.
+Arquitectura es como mudarse de casa de tus padres.
+
+?? Inversión de control
+
+
+
 #### Diseño Modular
 Como evitar Smell Codes
 - Cohesión

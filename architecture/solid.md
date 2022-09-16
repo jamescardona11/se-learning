@@ -326,5 +326,19 @@ Escribimos software para satisfacer una necesidad. Esto puede ser específico y 
 **Límites basados ​​en dominios**
 Cuando estructuramos el código de la manera que queremos y lo nombramos de la manera que queremos, los límites del módulo se convierten en límites del dominio y la implementación se vuelve sencilla. 
 
+- Composable – “plays well with others”
+- Unix – “does one thing well”
+- Predictable – “does what you expect”
+- Idiomatic – “feels natural”
+- Domain-based – “the solution domain models the problem domain in language and structure”
+
 
 ## SOLID VS CUPID
+SOLID tiene en mente que los productos de software evolucionan. Aplicando SOLID podemos asegurar que en el futuro updates van a ser menos dolorosos.
+
+CUPID has the same basic philosophy as SOLID: when coding, think about the people who will come after you.
+
+Una diferencia es:
+SOLID es un conjunto de principios usados durante el desarrollo. FOCUS ON PROCESS
+CUPID describe las propiedades que un código finalizado debe tener. FOCUS ON RESULT
+
