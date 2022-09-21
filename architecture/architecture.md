@@ -399,3 +399,11 @@ Durante el desarrollo, una arquitectura que permite cambios pequeños e incremen
 ### EQUIPOS
 Estructure los equipos para que se parezcan a su arquitectura de destino y será más fácil lograrlo.
 
+
+
+## TDD
+
+![](images/ttt.png)
+
+Que realmente es, antes de empezar a desarrollar un proyecto o una funcionalidad vas a desarrollar un test, que evidentemente va a fallar, luego vas a escribir lo necesario para que pase el test y haces el proceso las veces que necesitas.
+

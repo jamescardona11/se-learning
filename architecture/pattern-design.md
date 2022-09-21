@@ -23,3 +23,17 @@ Primero detectar/conocer el problema.
 Patrones son bisagras y los patrones generalmente no vienen aislado.
 Patrones hablan de como resolver problemas.
 
+
+
+## CommandQuerySeparation
+
+- Queries: Regresa valores y no hace cambios en el estado del sistema(No tiene side effects)
+- Commands: Cambia el estado del sistema pero no retorna valores
+
+Because the term 'command' is widely used in other contexts I prefer to refer to them as 'modifiers', you also see the term 'mutators'.
+
+La idea realmente valiosa de este principio es que es extremadamente útil si puede separar claramente los métodos que cambian de estado de los que no lo hacen. 
+
+
+## Parameter Object
+Encapsular una llamada de una o muchas cosas en un objeto contenido.

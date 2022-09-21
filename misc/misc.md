@@ -52,3 +52,5 @@ Ver un conejo o pato imagen, que todos vean lo mismo
 
 su nivel de deseo, pasion, commited
 La gente buena le pasa cosas buienas
+
+Enseñar es darle las respuestas. Entrenar es guiarlos a encontrala
