@@ -6,6 +6,15 @@ SINK is only write
 STREAM: is only read
 BehaviorSubject: its both because internal use StreamController
 
+
+Observable: Stream
+Subject: StreamController
+
+PublicSubject: StreamController con broadcastStream
+BehaviorSubject: StreamController con broadcastStream, que conserva el último estado que se emitio y lo emite como primer elemento a los nuevos listeners
+
+
+
 - Distinct: solo cuando sean valores diferentes
 - debounceTime: espera un momento para transmitir mensajes
 - switchMap: Convierte items into stream
