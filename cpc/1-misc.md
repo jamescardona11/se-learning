@@ -53,4 +53,19 @@ PriorityQueue
 Hashtable(No recomendable en 99% de los casos)
 
 
+TIPS from turing
+---
+- Leer el problema y tenerlo claro antes de empezar
+- Definan siempre las entradas y salidas del problema de forma correcta
+- Siempre pueden hacer pseudo código para empezar a crear la solución
+- Escriban el código en el lenguaje que se sientan cómodo
+- Probar las entradas y las salidas, probar casos de error (hacer 3 pruebas diferentes)
+- Optimizar al final si queda tiempo
 
+
+https://www.youtube.com/watch?v=xF554Tlzo-c&list=WL&index=53
+- Resolver los 150 más comunes
+- Solo tratar con un problema 1h
+- Si pasa una hora, ve y revisa la solución
+- Empieza por easy,
+- 
