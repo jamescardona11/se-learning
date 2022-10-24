@@ -342,3 +342,14 @@ Una diferencia es:
 SOLID es un conjunto de principios usados durante el desarrollo. FOCUS ON PROCESS
 CUPID describe las propiedades que un código finalizado debe tener. FOCUS ON RESULT
 
+
+
+BUENA REF
+**https://itnext.io/solid-principles-sketches-a38865e771f0
+https://takeoffandroid.github.io/solid-principles-flutter/
+https://medium.com/flutter-community/s-o-l-i-d-the-first-5-principles-of-object-oriented-design-with-dart-f31d62135b7e
+https://blog.ndepend.com/defense-solid-principles/
+
+
+Desventajas
+https://dev.to/victorpinzon1988eng/solid-single-responsibility-principle-48an

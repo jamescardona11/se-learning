@@ -54,3 +54,4 @@ su nivel de deseo, pasion, commited
 La gente buena le pasa cosas buienas
 
 Enseñar es darle las respuestas. Entrenar es guiarlos a encontrala
+

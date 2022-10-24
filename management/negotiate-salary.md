@@ -74,4 +74,25 @@ https://www.youtube.com/watch?v=YSsJ1O7l8nQ
 
 
 
-
+https://www.youtube.com/watch?v=HvLD5P1y6KA&t=1s
+- Buscar hacer negociación por intereses no por posiciones
+- La idea es que ambas partes tendrán los mismos intereses
+- Análisis, planificación, discusión (solo acá se negocia)
+- Objetivos de tu jefe, deseos, miedos
+- Simula relaciones
+- Preguntas inteligentes para descubrir los intereses de tu jefe
+- ¿cuales son las consecuencias inmediantas, largo plazo?
+- ¿Qué pasa si me dan el aumento?
+- ¿Qué pasa si no me dan el aumento?
+- .. 
+- Apunta los puntos esenciales de una negociación
+- Tener puntos flexibles
+- La mejor negociación no es cuando hay ganadores y perdores sino cuando ambas partes ganaron algo
+- Pensar que solo hay una solución, preguntar otros beneficios
+- Buscar que tu jefe sea tu aliado
+- ¿Cómo puedo ayudar que esta empresa crezca?
+- pregunta cordialmente el criterio para llegar al numero que te van a dar de aumento. No aceptes números aleatorios
+- Haz tus peticiones en orden estrategico 
+  - Ej, primero acenso, luego salario por tiempo, inflación
+- Mantén una postura positiva
+- 

@@ -407,3 +407,11 @@ Estructure los equipos para que se parezcan a su arquitectura de destino y será
 
 Que realmente es, antes de empezar a desarrollar un proyecto o una funcionalidad vas a desarrollar un test, que evidentemente va a fallar, luego vas a escribir lo necesario para que pase el test y haces el proceso las veces que necesitas.
 
+
+
+
+https://medium.com/@liams_o/fundamental-software-architectural-patterns-663440c5f9a5
+
+MVC: https://medium.com/@sadiasaif.official/design-patterns-in-flutter-mvc-4c865659f752
+
+https://medium.com/@karangore518/clean-architecture-with-bloc-pattern-90504e620c30
