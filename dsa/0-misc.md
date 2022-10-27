@@ -63,9 +63,27 @@ TIPS from turing
 - Optimizar al final si queda tiempo
 
 
+
+## How to use leetcode
 https://www.youtube.com/watch?v=xF554Tlzo-c&list=WL&index=53
 - Resolver los 150 más comunes
 - Solo tratar con un problema 1h
 - Si pasa una hora, ve y revisa la solución
 - Empieza por easy,
-- 
+
+## How to use leetcode
+https://www.youtube.com/watch?v=a-thH9a9_XE
+- Get premium
+- Start with leetcode 100 liked questions
+- focus en topics
+- Practice with a plan
+- Revisit you questions
+- Solve specific company questions
+
+
+## Problems
+https://www.youtube.com/c/EricProgramming/videos
+
+
+## Chatsheet
+https://www.piratekingdom.com/leetcode/cheat-sheet
