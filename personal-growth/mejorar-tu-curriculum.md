@@ -105,6 +105,40 @@ https://www.youtube.com/watch?v=BYUy1yvjHxE&t=5s
 https://www.techinterviewhandbook.org/resume/
 
 
+🙌 Quiero compartir los 10 factores que tuve en cuenta cuando decidí si cambiarme (o no) de trabajo y a cuál de las opciones que tenía.
+
+Por si puede ser útil para vosotros.
+
+1. Condiciones económicas
+
+2. Proyección interna
+
+3. Nivel del rol
+
+4. Atractivo del rol
+
+5. Perspectivas de futuro
+
+6. Atractivo del lugar (ciudad donde vivir)
+
+7. Vida social
+
+8. Estabilidad de la empresa
+
+9. Seguridad de la contratación
+
+10. Opinión de los otros (prestigio)
+
+Con los 10 factores y las empresas hice una tabla (en la imagen), asigné un scoring e hice una ponderación.
+
+Disculpad si está en sucio. Hice este ejercicio en un avión.
+
+Voy a intentar explicar qué es para mí cada factor.
+
+¿Qué os parece?
+
+¿Añadirías algún otro?
+
 
 
 
@@ -123,3 +157,6 @@ Your website or any public profile link
 
 -hackernews who is hiring
 https://weworkremotely.com
+
+
+https://www.linkedin.com/feed/update/urn:li:activity:6988157974028443648/?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A6988157974028443648%29

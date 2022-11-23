@@ -1,5 +1,5 @@
 # Zero Mastery
-
+https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link/c25f98c73a03f5b1107cd0e2f4bce29c9d78e31655e55cb0b785d56f0036c9d1
 
 ## Big O
 chatsheet: https://www.dropbox.com/s/w1ogy8310myxs9f/BigO_Cheatsheet_Zero_To_Mastery_V1.01.pdf?utm_campaign=your_big_o_cheatsheet_pdf_download&utm_medium=email&utm_source=mailerlite&utm_term=2022-10-21&dl=0
@@ -57,14 +57,30 @@ etc.. What is the main goal?
 
 Es una colección de values
 Las estructuras son útiles y especializadas para algo
+Son contenedores => como una nevera, mochila.
+
+Tienen operaciones.
+
+## Array DS
+
+push O(1) para static array
+append O(1) para dynamic array puede ser O(n)
+search O(n)
+lookup O(1)
+delete O(n)
 
 
+## HashTables
+Usan una función de hash optima
+insert O(1)
+lookup O(1)
+delete O(1)
+search O(1)
 
+Las hashtables puede ocurrir algo que se llama collision que es que en un mismo espacio de memoria se acumulen diferentes valores.
+Si esto pasa el reading and writing cambia a ser O(n/k) k= size of hashtable => O(n)
 
-
-
-
-
+En javascript tenemos los Map y Set. Los Maps en js conservan el orden de insertion.
 
 
 
