@@ -10,7 +10,7 @@ BehaviorSubject: its both because internal use StreamController
 Observable: Stream
 Subject: StreamController
 
-PublicSubject: StreamController con broadcastStream
+PublishSubject: StreamController con broadcastStream
 BehaviorSubject: StreamController con broadcastStream, que conserva el último estado que se emitio y lo emite como primer elemento a los nuevos listeners
 
 

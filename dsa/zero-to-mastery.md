@@ -53,6 +53,25 @@ etc.. What is the main goal?
 15. Finally talk to the interviewer where you would improve the code. Does it work? Are there different approaches? Is it readable? What would you google to improve? How can performance be improved? Possibly: Ask the interviewer what was the most interesting solution you have seen to this problem
 16. If your interviewer is happy with the solution, the interview usually ends here. It is also common that the interviewer asks you extension questions, such as how you would handle the problem if the whole input is too large to fit into memory, or if the input arrives as a stream. This is a common follow-up question at Google, where they care a lot about scale. The answer is usually a divide-and-conquer approach — perform distributed processing of the data and only read certain chunks of the input from disk into memory, write the output back to disk and combine them later.
 
+
+Good code checklist:
+[✅]It works
+[✅]Good use of data structures
+[✅]Code Re-use/ Do Not Repeat Yourself
+[✅]Modular - makes code more readable, maintainable and testable
+[✅]Less than O(N^2). We want to avoid nested loops if we can since they are expensive. Two separate loops are better than 2 nested loops
+[✅]Low Space Complexity --> Recursion can cause stack overflow, copying of large arrays may exceed memory of machine
+
+
+Heurestics to ace the question:
+[✅]Hash Maps are usually the answer to improve Time Complexity
+[✅]If it's a sorted array, use Binary tree to achieve O(log N). Divide and Conquer - Divide a data set into smaller chunks and then repeating a process with a subset of data. Binary search is a great example of this
+[✅]Try Sorting your input
+[✅]Hash tables and precomputed information (i.e. sorted) are some of the best ways to optimize your code
+[✅]Look at the Time vs Space tradeoff. Sometimes storing extra state in memory can help the time. (Runtime)
+[✅]If the interviewer is giving you advice/tips/hints. Follow them
+[✅]Space time tradeoffs: Hastables usually solve this a lot of the times. You use more space, but you can get a time optimization to the process. In programming, you often times can use up a little bit more space to get faster time
+
 ## Data structure
 
 Es una colección de values
@@ -63,8 +82,7 @@ Tienen operaciones.
 
 ## Array DS
 
-push O(1) para static array
-append O(1) para dynamic array puede ser O(n)
+push O(1) para static array. append O(1) para dynamic array puede ser O(n)
 search O(n)
 lookup O(1)
 delete O(n)
@@ -82,6 +100,16 @@ Si esto pasa el reading and writing cambia a ser O(n/k) k= size of hashtable => 
 
 En javascript tenemos los Map y Set. Los Maps en js conservan el orden de insertion.
 
+Bueno para
+- Fast lookups (good collision solution needed)
+- Fast insert
+- Flexible keys
+
+Malo para
+- Unordered
+- Slow key iteration
+  
+Improve velocity for nested loops for example but have more space O(n)
 
 
 
